@@ -1,0 +1,27 @@
+table{
+    border-collapse: collapse;
+    width: 30%;
+    margin: 0 auto;
+}
+th{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    background-color: #c4afff;
+}
+td.left{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: right;
+    background-color: #c4afff;
+}
+td.right{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    background-color: #c4afff;
+}
+td.right textarea {
+    width: 100%;
+    height: 150px;
+}
