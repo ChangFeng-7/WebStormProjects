@@ -10,12 +10,6 @@
 th{
     height: 50px;
 }
-th:hover{
-    background-color: #8aa3ff;
-}
-th:active{
-    background-color: #8aa3ff;
-}
 table{
     padding-bottom: 0px;
 }
@@ -27,6 +21,7 @@ iframe{
 }
 a{
     text-decoration: none;
+    color: inherit; /* 使用继承的文字颜色 */
 }
 .container {
     display: flex;

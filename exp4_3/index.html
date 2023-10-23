@@ -10,11 +10,11 @@
     <div class="rectangle">
         <table>
             <tr>
-                <th class="box"><a href="1.html" target="text"> 热点排行</a></th>
+                <th class="box" id="hot"><a href="1.html" target="text"> 热点排行</a></th>
                 <td>&nbsp</td>
-                <th class="box"><a href="2.html" target="text"> 评论排行</a></th>
+                <th class="box" id="comments"><a href="2.html" target="text"> 评论排行</a></th>
                 <td>&nbsp</td>
-                <th class="box"><a href="3.html" target="text"> 图片排行&nbsp</a></th>
+                <th class="box" id="images"><a href="3.html" target="text"> 图片排行&nbsp</a></th>
             </tr>
         </table>
         <hr class="hr">
@@ -23,5 +23,74 @@
         </p>
     </div>
 </div>
+<script>
+    // 获取表头元素
+    const hotHeader = document.getElementById('hot');
+    const commentsHeader = document.getElementById('comments');
+    const imagesHeader = document.getElementById('images');
+
+    // 用于跟踪当前显示的 iframe 页面
+    let currentIframe = '1.html';
+
+    // 获取目标 iframe
+    const textFrame = window.frames['text'];
+
+    // 添加鼠标移入事件监听器来切换 iframe 内容
+    hotHeader.addEventListener('mouseover', () => {
+        textFrame.location.href = '1.html';
+        hotHeader.style.backgroundColor = '#98b7ff';
+        hotHeader.style.color = 'white';
+        currentIframe = '1.html';
+        commentsHeader.style.backgroundColor = 'white';
+        commentsHeader.style.color = 'black';
+        imagesHeader.style.backgroundColor = 'white';
+        imagesHeader.style.color = 'black';
+    });
+
+    commentsHeader.addEventListener('mouseover', () => {
+        textFrame.location.href = '2.html';
+        commentsHeader.style.backgroundColor = '#98b7ff';
+        commentsHeader.style.color = 'white';
+        currentIframe = '2.html';
+        hotHeader.style.backgroundColor = 'white';
+        hotHeader.style.color = 'black';
+        imagesHeader.style.backgroundColor = 'white';
+        imagesHeader.style.color = 'black';
+    });
+
+    imagesHeader.addEventListener('mouseover', () => {
+        textFrame.location.href = '3.html';
+        imagesHeader.style.backgroundColor = '#98b7ff';
+        imagesHeader.style.color = 'white';
+        currentIframe = '3.html';
+        hotHeader.style.backgroundColor = 'white';
+        hotHeader.style.color = 'black';
+        commentsHeader.style.backgroundColor = 'white';
+        commentsHeader.style.color = 'black';
+    });
+
+    // 添加鼠标移出事件监听器来还原样式
+    hotHeader.addEventListener('mouseout', () => {
+        if (!hotHeader.contains(document.activeElement)) {
+            hotHeader.style.backgroundColor = '#98b7ff';
+            hotHeader.style.color = 'black';
+        }
+    });
+
+    commentsHeader.addEventListener('mouseout', () => {
+        if (!commentsHeader.contains(document.activeElement)) {
+            commentsHeader.style.backgroundColor = '#98b7ff';
+            commentsHeader.style.color = 'black';
+        }
+    });
+
+    imagesHeader.addEventListener('mouseout', () => {
+        if (!imagesHeader.contains(document.activeElement)) {
+            imagesHeader.style.backgroundColor = '#98b7ff';
+            imagesHeader.style.color = 'black';
+        }
+    });
+
+</script>
 </body>
 </html>

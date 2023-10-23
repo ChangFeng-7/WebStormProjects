@@ -1,10 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>课程表</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('../wallhaven-v9mg65_1920x1080.png'); background-size: cover;
+        }
+
+        .course-table {
+            max-width: 600px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+        }
+
+
+        th.course {
+            width: 200px;
+        }
+
+        th.instructor {
+            width: 150px;
+        }
+
+        .week-selector-table {
+            border-collapse: separate;
+            border-spacing: 90px;
+            margin-right: 10px;
+        }
+
+        .week-selector-table th {
+            padding: 4px 8px;
+            border: none;
+        }
+
+        .week-selector-table a {
+            text-decoration: none;
+            color: #000;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 <body>
-
+<table class="week-selector-table">
+    <th>
+        <table width="100%">
+            <caption align="center"></caption>
+            <tr><th><a onclick="generateCourseTable(0);">全周</a></th></tr>
+            <tr><th><a onclick="generateCourseTable(1);">星期一</a></th></tr>
+            <tr><th><a onclick="generateCourseTable(2);">星期二</a></th></tr>
+            <tr><th><a onclick="generateCourseTable(3);">星期三</a></th></tr>
+            <tr><th><a onclick="generateCourseTable(4);">星期四</a></th></tr>
+            <tr><th><a onclick="generateCourseTable(5);">星期五</a></th></tr>
+            <tr><th><a onclick="generateCourseTable(6);">星期六</a></th></tr>
+            <tr><th><a onclick="generateCourseTable(7);">星期日</a></th></tr>
+        </table>
+    </th>
+</table>
+<div class="course-table"></div>
 </body>
+<script src="SwitchTable.js"></script>
 </html>
