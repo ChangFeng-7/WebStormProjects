@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>乘法表</title>
+</head>
+<body>
+    <h1>乘法表</h1>
+    <form action="/show2" method="post">
+        <label for="number">请输入一个数字: </label>
+        <input type="number" name="number" id="number">
+        <input type="submit" value="生成乘法表">
+    </form>
+    <br>
+    <table>
+    {% if result %}
+    <tr>
+        <th>乘数</th><th>符号</th><th>结果</th>
+    </tr>
+    {% for row in result %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+        {% endif %}
+</body>
+</html>

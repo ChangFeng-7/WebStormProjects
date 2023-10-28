@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 align="center">{{ date }}</h1>
+<hr>
+<table align="center"  cellspacing="200">
+    <th>
+<form action="/" method="post">
+<table width="100%">
+    <caption align="center"></caption>
+    <tr><th> <button type="submit" name="button" value="0">全周</button></th></tr>
+    <tr><th> <button type="submit" name="button" value="1">星期一</button></th></tr>
+    <tr><th> <button type="submit" name="button" value="2">星期二</button></th></tr>
+    <tr><th> <button type="submit" name="button" value="3">星期三</button></th></tr>
+    <tr><th> <button type="submit" name="button" value="4">星期四</button></th></tr>
+    <tr><th> <button type="submit" name="button" value="5">星期五</button></th></tr>
+    <tr><th> <button type="submit" name="button" value="6">星期六</button></th></tr>
+    <tr><th> <button type="submit" name="button" value="7">星期日</button></th></tr>
+</table>
+</form>
+    </th>
+    <th>
+<table align="center" width="500" border="1" style="border-collapse: collapse;text-align: center">
+    {% if courses %}
+    <tr>
+        <th>课程名</th>
+        <th>教室</th>
+        <th>节次</th>
+        <th>教师</th>
+    </tr>
+    {%  for course in courses %}
+    <tr>
+        <td>{{ course[1] }}</td>
+        <td>{{ course[2] }}</td>
+        <td>{{ course[4] }}</td>
+        <td>{{ course[5] }}</td>
+    </tr>
+    {% endfor %}
+{% endif %}
+</table>
+    </th>
+</table>
+</body>
+</html>

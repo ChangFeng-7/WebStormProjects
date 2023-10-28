@@ -1,0 +1,29 @@
+<!-- show1.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>乘法表</title>
+</head>
+<body>
+    <h1>乘法表</h1>
+    <br>
+    {% if result %}
+    <table>
+        <tr>
+            <th>乘数</th>
+            <th>符号</th>
+            <th>结果</th>
+        </tr>
+        {% for row in result %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html>
